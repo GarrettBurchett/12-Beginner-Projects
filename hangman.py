@@ -23,7 +23,7 @@ def hangman():
         print('You have used these letters: ', ' '.join(used_letters))
 
         # what current word is (ie W - R D)
-        word_list = [letter if letter in used_letter else '-' for letter in word]
+        word_list = [letter if letter in used_letters else '-' for letter in word]
         print('Current word: ', ' '.join(word_list))
 
         user_letter = input('Guess a letter: ').upper()
@@ -34,7 +34,7 @@ def hangman():
             else:
                 lives = lives - 1 # takes away a life if wrond
                 print('Letter is not in word.')
-                
+
         elif user_letter in used_letters:
             print('You have already used that character. Please try again.')
 
